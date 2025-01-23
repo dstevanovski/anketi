@@ -1,0 +1,148 @@
+/* 1) Basic Reset & Background (matches your new style approach) */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a; /* dark outer background */
+    font-family: 'Exo 2', sans-serif;
+    color: #fff; /* default text color outside poll */
+  }
+  
+  /* 2) Outer Container (the <div class="border"> in extracted code) */
+  .border {
+    /* Matches your teal container with a certain width/height */
+    width: 300px;
+    height: 287px;
+    margin: 20px auto;       /* center horizontally with some top/bottom margin */
+    background-color: #2aa7c9; /* teal background */
+    border-radius: 8px;
+    position: relative;      /* so we can absolutely position inside if needed */
+    overflow: hidden;        /* cut off any overflowing child elements */
+    box-sizing: border-box;
+    padding: 10px;           /* a little padding inside if you want */
+  }
+  
+  /* 3) The .logo area (was <div class="logo"><img>...) 
+     You can re-purpose this to show "media • connectivity | research centre"
+     or keep the original logo.  
+  */
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 0.9rem;
+    color: #000;              /* black letters on teal background */
+    letter-spacing: 1px;      /* a bit more letter spacing */
+    margin-bottom: 5px;
+  }
+  
+  .logo img {
+    height: 24px;    /* if you keep the existing Makfax logo, size it down */
+  }
+  
+  /* 4) Main Poll Container (<div class="poll-container-1">) 
+     We'll treat this as your "black question box." 
+     In the extracted HTML, there's a <h6> with the question text. 
+  */
+  .poll-container-1 {
+    background-color: #000;  /* black box */
+    color: #fff;             /* white text inside */
+    padding: 15px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  
+    /* To expose teal on the right side, 
+       you could add margin-right: 15px or so, but it’s optional:
+       margin-right: 15px;
+    */
+  }
+  
+  /* The question is in <h6> according to your extracted code */
+  .poll-container-1 h6 {
+    margin: 0;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  
+  /* 5) The .poll-type-1 and .result classes show results. 
+     We'll style them similarly to your new design, 
+     i.e. answer text on the left, percentage on the right, 
+     followed by a bar (thin black line with white fill). 
+  */
+  
+  /* Container that wraps each group of results (<div class="poll-type-1">) */
+  .poll-type-1 {
+    margin-top: 10px; 
+    margin-left: 0;  /* or 15px if you want indentation */
+    margin-right: 0;
+  }
+  
+  /* Each individual .result block has .title, .value, then .bar-wrap. */
+  .result {
+    margin-bottom: 15px;
+    font-size: 0.8rem;      /* smaller text if you like */
+    display: flex;
+    flex-direction: column; /* title + value on one line, or we can separate them below */
+  }
+  
+  /* Title (answer text) and value (percentage) are in separate <span> tags. 
+     If you want them on the same line, you can do this: 
+  */
+  .result .title,
+  .result .value {
+    display: inline-block;
+    color: #fff;  /* white text on black box background, if you prefer */
+  }
+  
+  /* Or you can separate them like: 
+     .result .title {
+       float: left;
+       ...
+     }
+     .result .value {
+       float: right;
+       ...
+     }
+  */
+  
+  /* 6) The bar that shows the result percentage 
+     (outer .bar-wrap + inner .bar). 
+  */
+  .bar-wrap {
+    background-color: #000;   /* thin black track */
+    height: 3px;             /* or 2px, or 6px, whichever you like */
+    border-radius: 2px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* White bar fill inside */
+  .bar {
+    background-color: #fff;
+    height: 100%;
+    border-radius: 2px;
+    /* The style="width: XX%" from the HTML sets the actual fill */
+  }
+  
+  /* 7) Tweak Global Materialize Resets (Optional)
+     If you want to override some Materialize default paddings or font sizes, 
+     you can do so. For example:
+  */
+  body, .materialize-content, .container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* 8) If you want to hide or override certain Materialize classes,
+     you can do it here with !important. E.g.:
+  
+  .container {
+    max-width: none !important;
+  } 
+  
+  Or anything else that conflicts with your layout.
+  */
+  

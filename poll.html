@@ -4,77 +4,114 @@
   <meta charset="UTF-8">
   <title>Анкета</title>
 
-  <!-- 1) Google Fonts -->
-  <!-- Exo 2 and PT Sans Narrow -->
+  <!-- Google Fonts: Exo 2 and PT Sans Narrow -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
     href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=PT+Sans+Narrow:wght@400;700&display=swap" 
     rel="stylesheet">
   
-  <!-- 2) Link to the external stylesheet -->
+  <!-- Link to the external stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Optional: top bar to mimic screenshot -->
-  <div class="header-bar">
-    media • connectivity | research centre
-  </div>
-  <div class="submenu">
-    mkd | свет | бизнис | tech | забава | спорт | podcast
-  </div>
-
   <!-- FIRST STATE: POLL FORM -->
   <div id="poll" class="poll-container">
-    <h2>Дали Македонија треба да го напушти договорот за добрососедство со Бугарија?</h2>
+
+    <!-- Centered text at top, spanning full width of teal box -->
+    <div class="poll-header">
+      <strong>media</strong> • connectivity  |  research centre
+    </div>
+
+    <!-- Black box that extends from the left -->
+    <div class="question-box">
+      <h2>Дали Македонија треба да го напушти договорот за добрососедство со Бугарија?</h2>
+    </div>
+
+    <!-- The answers and submit button -->
     <form>
-      <div>
-        <input type="radio" name="answer" id="opt1" value="1">
-        <label for="opt1">Не, треба да свиткаме кичма.</label>
+      <div class="answers-box">
+        <label>
+          <input type="radio" name="answer" value="1">
+          Не, треба да свиткаме кичма.
+        </label>
+        <label>
+          <input type="radio" name="answer" value="2">
+          Не, треба политички да дејствуваме.
+        </label>
+        <label>
+          <input type="radio" name="answer" value="3">
+          Не, ако го признаат македонското малцинство во Република Бугарија.
+        </label>
+        <label>
+          <input type="radio" name="answer" value="4">
+          Да, и да ги отераме у 3 лепе фине пичке материне.
+        </label>
       </div>
-      <div>
-        <input type="radio" name="answer" id="opt2" value="2">
-        <label for="opt2">Не, треба политички да дејствуваме.</label>
+
+      <div class="submit-container">
+        <button type="submit" class="submit-btn">Гласај !</button>
       </div>
-      <div>
-        <input type="radio" name="answer" id="opt3" value="3">
-        <label for="opt3">Не, ако го признаат македонското малцинство во Република Бугарија.</label>
-      </div>
-      <div>
-        <input type="radio" name="answer" id="opt4" value="4">
-        <label for="opt4">Да, и да ги отераме у 3 лепе фине пичке материне.</label>
-      </div>
-      <button type="submit">Гласај!</button>
     </form>
   </div>
 
   <!-- SECOND STATE: POLL RESULTS (hidden by default) -->
   <div id="poll-results" class="poll-container" style="display: none;">
-    <h2>Резултати</h2>
-
-    <p>Не, треба да свиткаме кичма. - 53,3%</p>
-    <div class="result-bar-container">
-      <div class="result-bar" style="width: 53.3%;">53.3%</div>
+    <div class="poll-header">
+      <strong>media</strong> • connectivity  |  research centre
     </div>
 
-    <p>Не, треба политички да дејствуваме. - 12,4%</p>
-    <div class="result-bar-container">
-      <div class="result-bar" style="width: 12.4%;">12.4%</div>
+    <!-- Black box for the title -->
+    <div class="question-box">
+      <h2>Дали Македонија треба да го напушти договорот за добрососедство со Бугарија?</h2>
     </div>
 
-    <p>Не, ако го признаат македонското малцинство во Република Бугарија. - 7,1%</p>
-    <div class="result-bar-container">
-      <div class="result-bar" style="width: 7.1%;">7.1%</div>
-    </div>
+    <!-- Each result: answer (left) + percentage (right) on one line, bar below -->
+    <div class="results-box">
+      <!-- 1) -->
+      <div class="result-line">
+        <span class="answer-text">Не, треба да свиткаме кичма.</span>
+        <span class="percent-text">53,3%</span>
+      </div>
+      <div class="result-bar">
+        <div class="white-fill" style="width: 53.3%;"></div>
+      </div>
 
-    <p>Да, и да ги отераме у 3 лепе фине пичке материне. - 21,8%</p>
-    <div class="result-bar-container">
-      <div class="result-bar" style="width: 21.8%;">21.8%</div>
+      <!-- 2) -->
+      <div class="result-line">
+        <span class="answer-text">Не, треба политички да дејствуваме.</span>
+        <span class="percent-text">12,4%</span>
+      </div>
+      <div class="result-bar">
+        <div class="white-fill" style="width: 12.4%;"></div>
+      </div>
+
+      <!-- 3) -->
+      <div class="result-line">
+        <span class="answer-text">
+          Не, ако го признаат македонското малцинство во Република Бугарија.
+        </span>
+        <span class="percent-text">7,1%</span>
+      </div>
+      <div class="result-bar">
+        <div class="white-fill" style="width: 7.1%;"></div>
+      </div>
+
+      <!-- 4) -->
+      <div class="result-line">
+        <span class="answer-text">
+          Да, и да ги отераме у 3 лепе фине пичке материне.
+        </span>
+        <span class="percent-text">21,8%</span>
+      </div>
+      <div class="result-bar">
+        <div class="white-fill" style="width: 21.8%;"></div>
+      </div>
     </div>
   </div>
 
   <script>
-    // Simple toggle: show "results" after form submission
+    // Show results on "Гласај!" click
     const form = document.querySelector('form');
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -83,4 +120,6 @@
     });
   </script>
 </body>
+
+<iframe src="https://anketi.makfax.com.mk/form/a8985dbe-9712-4622-856b-a9e121fb2cff" width="300" height="287" style="border:none;"></iframe>
 </html>
